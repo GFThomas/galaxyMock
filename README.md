@@ -32,8 +32,8 @@ This repository contains the following files and directories:
 
 - **make_model.py**: Generates a realistic stellar distribution model for a galaxy.
 - **make_mock.py**: Projects the stellar model onto the sky and creates an observed mock galaxy, resembling real observational data.
-- **/iso/**: Contains isochrones from the Padova stellar library. Additional isochrone sets can be added to this folder as needed.
-- **/out/**: Contains the generated models and mocks.
+- **iso/**: Contains isochrones from the Padova stellar library. Additional isochrone sets can be added to this folder as needed.
+- **out/**: Contains the generated models and mocks.
 - **examples/**: Contains example files that demonstrate how to use the package:
   - **mock_sculptor_GaiaDR3.fits**: Example of an observed-like mock of the Sculptor dSph model in Gaia DR3 based on the model of *Arroyo-Polonio et al. 2025*.
   - **params.ini**: Configuration file that is used to set parameters for generating the model of the galaxy.
