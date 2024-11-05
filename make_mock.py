@@ -88,12 +88,18 @@ def get_photometry(data):
 	
 	# Add the dm to each photometric band
 	for i,band in enumerate(list_photoband):
-		# Add the distance modulus
+		
 		data[band+"_true"]=data[band].copy() # Copy the true photometry
+		
+		# Add the distance modulus
 		data[band]+=float(proj["DM"])
 		
 		
-		# ADD RANDOM FLUX (POISONNIAN NOISE)
+		# ADD RANDOM FLUX (POISONNIAN NOISE, VEGA mag)
+		flux=10**(-data[band]/2.5)*3631.0
+		flux+=np.sqrt(flux)*np.random.normal(0,1,len(data))
+		data[band]=-2.5*np.log10(flux/3631.0)
+		
 		
 		# Apply the extinction
 		data=apply_extinction(data,band=band)
