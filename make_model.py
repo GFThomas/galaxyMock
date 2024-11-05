@@ -333,6 +333,6 @@ if __name__=='__main__':
 		output_full=vstack([output_full,data])
 		del(data)
 		
-	output_full.write("out/model_absolute.fits",overwrite=True)
+	output_full.write("out/model.fits",overwrite=True)
 		
 		
