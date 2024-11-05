@@ -20,9 +20,9 @@
 
 To install \`galaxyMock\`, simply run the following command in your terminal:
 
-\`\`\`bash
-./install.sh
-\`\`\`
+
+> ./install.sh
+
 
 ---
 
@@ -38,6 +38,7 @@ This repository contains the following files and directories:
   - **\`mock_sculptor_GaiaDR3.fits\`**: Example of an observed-like mock of the Sculptor dSph model in Gaia DR3 based on the model of *Arroyo-Polonio et al. 2025*.
   - **\`params.ini\`**: Configuration file that is used to set parameters for generating the model of the galaxy.
   - **\`params_proj.ini\`**: Configuration file that is used to set parameters for making the observed-like mock galaxy.
+
 ---
 
 ## Example Usage
@@ -49,10 +50,8 @@ Here’s how to use the tools in \`galaxyMock\`:
 You can use the \`make_model.py\` script to generate a realistic stellar distribution model of a galaxy. This will require modifying the \`exemples/params.ini\` configuration file to set the parameters for the galaxy model, such as stellar components, mass, age, etc.
 
 **Example command to generate the model:**
+> python make_model.py exemples/params.ini
 
-\`\`\`bash
-python make_model.py exemples/params.ini
-\`\`\`
 
 This command reads the \`exemples/params.ini\` file and creates a stellar model similar to the Sculptor model of *Arroyo-Polonio et al. 2025*, which will be saved in a file called \`out/model.fits\`.
 
@@ -61,10 +60,8 @@ This command reads the \`exemples/params.ini\` file and creates a stellar model 
 After generating a stellar model, you can use the \`make_mock.py\` script to project the model onto the sky and generate a mock observation. This will simulate real-world data, such as what might be observed by Gaia.
 
 **Example command to generate the mock:**
+> python make_mock.py out/model.fits exemples/params_proj.ini
 
-\`\`\`bash
-python make_mock.py out/model.fits exemples/params_proj.ini
-\`\`\`
 
 This will take the galaxy model \`out/model.fits\` and project it into an observed mock, saved as \`mock.fits\`. This mock data will have the characteristics of a real-world observation, such as Gaia DR3.
 
